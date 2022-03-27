@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pdf417 Generador</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="pdf417-generator">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="PDF417 HUB3 2D barcode generator for browser and Node">
+<meta property="og:description" content="PDF417 HUB3 2D barcode generator for browser and Node">
+<link rel="canonical" href="https://pkoretic.github.io/pdf417-generator/">
+<meta property="og:url" content="https://pkoretic.github.io/pdf417-generator/">
+<meta property="og:site_name" content="pdf417-generator">
+<script type="application/ld+json">
+{"headline":"pdf417-generator","@type":"WebSite","url":"https://pkoretic.github.io/pdf417-generator/","name":"pdf417-generator","description":"PDF417 HUB3 2D barcode generator for browser and Node","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="./pdf417_files/style.css">
+  </head>
+  <body>
+    
+
+    <section class="main-content">
+      <div style="display: flex; justify-content: space-evenly; align-items: center; flex-wrap: wrap;
+margin-bottom: 50px">
+    <div>
+        <textarea id="code" cols="30" rows="15" oninput="generate()" onchange="generate" style="display: block"></textarea>
+        <label>Aspect Ratio
+            <input id="aspectratio" type="number" oninput="generate()" onchange="generate" style="display: block">
+        </label>
+    </div>
+    <canvas id="barcode" width="90" height="76"></canvas>
+<div>
+
+<script src="./pdf417_files/libbcmath.js" type="text/javascript"></script>
+<script src="./pdf417_files/bcmath.js" type="text/javascript"></script>
+<script src="./pdf417_files/pdf417.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+window.onload = function()
+{
+    var code = "PEGAR CODIGO AQUI";
+
+    document.getElementById("code").value = code
+    document.getElementById("aspectratio").value = 1.5
+    generate()
+}
+
+function generate()
+{
+    var code = document.getElementById("code").value
+    var aspectratio = Number(document.getElementById("aspectratio").value)
+    var canvas = document.getElementById("barcode")
+    PDF417.draw(code, canvas, aspectratio)
+}
+</script>
+</div></div>
+
+
+      
+    </section>
+
+    
+  
+
+</body></html>
